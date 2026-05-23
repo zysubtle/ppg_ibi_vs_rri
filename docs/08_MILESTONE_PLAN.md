@@ -57,6 +57,8 @@
 
 允许：flatline、clipping、low amplitude、timestamp anomaly、shape fail、interval fail、warmup 等规则。
 
+禁止：把 confidence 当作已校准医学可靠性结论；修改已确认的公开输出字段语义；跳过 invalid_reason 记录。
+
 验收：
 
 - invalid_reason 枚举完整；
@@ -98,6 +100,10 @@
 
 目标：建立回归测试矩阵、参数冻结、benchmark 对拍。
 
+允许：回归测试矩阵、参数变更记录、baseline 与主算法对比、第三方离线 benchmark 对拍。
+
+禁止：引入第三方生产依赖；把离线 benchmark 工具作为 MCU 生产实现；未由 Owner 确认就冻结验收门槛。
+
 验收：
 
 - 每个数据集版本有结果记录；
@@ -108,6 +114,10 @@
 ## M8：验收报告与风险复盘
 
 目标：整理最终验收报告、风险复盘、文档收敛和后续版本计划。
+
+允许：汇总验收结果、关闭或转移风险、更新交付文档、提出后续版本计划。
+
+禁止：伪造或夸大达标结果；隐藏未达标项；merge PR 或发布版本绕过 Owner 确认。
 
 验收：
 
