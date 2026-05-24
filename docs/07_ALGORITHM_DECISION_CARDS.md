@@ -77,10 +77,15 @@
 | 项目 | 内容 |
 |---|---|
 | 决策主题 | ECG RRI vs PPG-IBI 评估协议 |
-| 推荐方案 | beat-level 与 interval-level 分开；±150 ms beat matching；连续 matched valid beats 计算 IBI error |
+| 推荐方案 | beat-level 与 interval-level 分开 |
 | 证据强度 | Strong |
 | 风险 | 需要足够数据与可靠 ECG reference |
 | 工程决策 | Accept |
+
+补充说明：
+
+- 使用 ±150 ms beat matching；
+- 连续 matched valid beats 才计算 IBI error。
 
 ## D9. Sampling Rate
 
@@ -127,7 +132,11 @@
 | 项目 | 内容 |
 |---|---|
 | 决策主题 | M1 范围 |
-| 推荐方案 | 先生成项目包、接口、评估协议、里程碑计划和 Codex 任务边界，不直接写完整算法 |
+| 推荐方案 | 先生成项目包、接口、评估协议、里程碑计划和 Codex 任务边界 |
 | 证据强度 | Strong by protocol |
 | 风险 | 进展看似慢，但降低返工 |
 | 工程决策 | Accept |
+
+补充说明：
+
+- M1 不直接写完整算法。

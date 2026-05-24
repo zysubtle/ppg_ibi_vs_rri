@@ -2,7 +2,10 @@
 
 ## 1. 总原则
 
-PPG 主峰时间戳与 ECG R 峰时间戳之间存在 pulse transit / pulse arrival delay，不能简单做绝对时间硬匹配后直接评价 IBI。
+PPG 主峰时间戳与 ECG R 峰时间戳之间存在
+pulse transit / pulse arrival delay。
+
+不能简单做绝对时间硬匹配后直接评价 IBI。
 
 首版评估必须拆成两层：
 
@@ -59,7 +62,9 @@ PPG beat 经 lag compensation 后，落在 ECG reference beat ±150 ms 内，计
 | F1 | 2 * PPV * Sensitivity / (PPV + Sensitivity) |
 | beat timing error | matched PPG beat timestamp - reference timestamp after lag compensation |
 
-M1 已确认用户核心指标包含 sensitivity；协议建议同时加入 PPV / F1 以防只靠多报 peak 提升 sensitivity。
+M1 已确认用户核心指标包含 sensitivity。
+
+协议建议同时加入 PPV / F1，以防只靠多报 peak 提升 sensitivity。
 
 ## 4. Interval-level evaluation
 

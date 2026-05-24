@@ -1,6 +1,9 @@
 # IO Contract v0.1
 
-状态：M1 初版。Owner 已确认核心输出字段和主要语义；部分枚举和门槛允许在 M2/M3 后细化。
+状态：M1 初版。
+
+Owner 已确认核心输出字段和主要语义。
+部分枚举和门槛允许在 M2/M3 后细化。
 
 ## 1. 输入契约
 
@@ -15,7 +18,8 @@
 工程要求：
 
 - 采样率 MVP 固定为 50 Hz。
-- 缺省测试 fixture 若无 `allow_measure` 字段，可按全 1 处理，但必须在日志中标记为 fixture fallback。
+- 缺省测试 fixture 若无 `allow_measure` 字段，可按全 1 处理。
+- 使用 fallback 时，必须在日志中标记为 fixture fallback。
 - 不得把 `quality_flag=OK/ok` 直接等同于工程输入 `allow_measure=1`。
 
 ### 1.2 初始化参数

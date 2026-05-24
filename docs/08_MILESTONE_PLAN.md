@@ -2,7 +2,11 @@
 
 ## M1：项目包、文档与任务边界
 
-目标：建立仓库文档、接口契约、数据契约、评估协议、风险登记、PR 审查清单和 `docs/10_CODEX_NEXT_TASK.md`。
+目标：
+
+- 建立仓库文档；
+- 建立接口契约、数据契约和评估协议；
+- 建立风险登记、PR 审查清单和 `docs/10_CODEX_NEXT_TASK.md`。
 
 允许：文档、目录规划、任务边界。
 
@@ -57,7 +61,11 @@
 
 允许：flatline、clipping、low amplitude、timestamp anomaly、shape fail、interval fail、warmup 等规则。
 
-禁止：把 confidence 当作已校准医学可靠性结论；修改已确认的公开输出字段语义；跳过 invalid_reason 记录。
+禁止：
+
+- 把 confidence 当作已校准医学可靠性结论；
+- 修改已确认的公开输出字段语义；
+- 跳过 invalid_reason 记录。
 
 验收：
 
@@ -102,7 +110,11 @@
 
 允许：回归测试矩阵、参数变更记录、baseline 与主算法对比、第三方离线 benchmark 对拍。
 
-禁止：引入第三方生产依赖；把离线 benchmark 工具作为 MCU 生产实现；未由 Owner 确认就冻结验收门槛。
+禁止：
+
+- 引入第三方生产依赖；
+- 把离线 benchmark 工具作为 MCU 生产实现；
+- 未由 Owner 确认就冻结验收门槛。
 
 验收：
 

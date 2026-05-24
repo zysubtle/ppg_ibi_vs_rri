@@ -13,7 +13,8 @@ Owner 已接受：
 
 当前进入 M1：项目包与 Codex 任务文件。
 
-M1 的目标是把已确认的项目目标、接口边界、数据契约、评估协议、里程碑计划和 PR 审查规则落入仓库文档。
+M1 的目标是把已确认的项目目标、接口边界、数据契约、
+评估协议、里程碑计划和 PR 审查规则落入仓库文档。
 
 M1 不实现 PPG-IBI 算法，不写 C 算法代码，不写 Python 评估代码。
 
@@ -153,7 +154,9 @@ docs/11_PR_REVIEW_CHECKLIST.md
 
 ### 5.6 Milestone Plan
 
-`docs/08_MILESTONE_PLAN.md` 必须包含 M1–M8，每个 milestone 包含目标、允许事项、禁止事项和验收点。
+`docs/08_MILESTONE_PLAN.md` 必须包含 M1–M8。
+
+每个 milestone 包含目标、允许事项、禁止事项和验收点。
 
 ### 5.7 Risk Register
 
