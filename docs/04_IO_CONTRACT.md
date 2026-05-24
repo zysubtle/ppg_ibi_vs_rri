@@ -1,6 +1,9 @@
 # IO Contract v0.1
 
-状态：M1 初版。Owner 已确认核心输出字段和主要语义；部分枚举和门槛允许在 M2/M3 后细化。
+状态：M1 初版。
+
+Owner 已确认核心输出字段和主要语义。
+部分枚举和门槛允许在 M2/M3 后细化。
 
 ## 1. 输入契约
 
@@ -15,7 +18,8 @@
 工程要求：
 
 - 采样率 MVP 固定为 50 Hz。
-- 缺省测试 fixture 若无 `allow_measure` 字段，可按全 1 处理，但必须在日志中标记为 fixture fallback。
+- 缺省测试 fixture 若无 `allow_measure` 字段，可按全 1 处理。
+- 使用 fallback 时，必须在日志中标记为 fixture fallback。
 - 不得把 `quality_flag=OK/ok` 直接等同于工程输入 `allow_measure=1`。
 
 ### 1.2 初始化参数
@@ -40,7 +44,32 @@
 | `confidence` | uint8 | - | 0～100 | 当前 IBI 可靠度评分 |
 | `valid_flag` | uint8 / bool | - | 0/1 | 1=当前 IBI 可用；0=invalid |
 
-### 2.2 内部/debug 建议输出
+### 2.2 输出字段语义
+
+`beat_timestamp_ms`：
+
+- 表示当前有效 PPG systolic apex，即 PPG 主峰时间戳。
+- 时间基准必须与输入 `timestamp_ms` 一致，单位为 ms。
+- 它不是 ECG R peak 时间戳，也不要求与 ECG R peak 绝对硬对齐。
+
+`IBI_ms`：
+
+- 表示当前有效 PPG 主峰与上一有效 PPG 主峰之间的时间差。
+- 只在当前 beat 与上一有效 beat 都满足 valid 条件时输出有效值。
+- invalid beat、不支持场景、质量不足片段不得参与有效 IBI 链。
+
+`confidence`：
+
+- 初版范围为 0～100。
+- 表示当前 IBI 的经验可靠度评分，不是正式性能达标声明。
+- 发布阈值必须在后续 threshold sweep 后确认，M1 不冻结阈值。
+
+`valid_flag`：
+
+- `1` 表示当前 IBI 可供上游 IBI/HRV/PRV 计算使用。
+- `0` 表示当前输出不可用，具体原因应由 internal/debug `invalid_reason` 记录。
+
+### 2.3 内部/debug 建议输出
 
 | 字段 | 建议类型 | 说明 |
 |---|---|---|
